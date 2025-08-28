@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamStay - Phòng Trọ GenZ, Giá Ưu Đãi</title>
-    <meta name="description" content="Khám phá phòng trọ, căn hộ studio thiết kế hiện đại, đầy đủ tiện nghi dành cho sinh viên và người đi làm trẻ. Ưu đãi giới hạn, xem ngay!">
-    
+    <title>DreamStay - Phòng Trọ Sáng Sủa, Giá Ưu Đãi</title>
+    <meta name="description"
+        content="Khám phá phòng trọ, căn hộ studio thiết kế hiện đại, đầy đủ tiện nghi dành cho sinh viên và người đi làm trẻ. Ưu đãi giới hạn, xem ngay!">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <style>
         body {
             font-family: 'Be Vietnam Pro', sans-serif;
-            background-color: #111827; /* Dark Blue Gray */
-            color: #e0e0e0;
+            background-color: #f3f4f6;
+            color: #1f2937;
         }
+
         .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            background: linear-gradient(90deg, #4f46e5, #7c3aed, #db2777);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
         }
-        .card-hover-glow:hover {
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+
+        .card-hover-shadow:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
             transform: translateY(-8px) scale(1.02);
         }
+
         .fomo-tag {
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(236, 72, 153, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        header h1 {
+            line-height: 1.2 !important;
         }
     </style>
 </head>
+
 <body class="antialiased">
-    <div class="min-h-screen w-full bg-gray-900 bg-opacity-50">
+    <div class="min-h-screen w-full">
         <div class="container mx-auto px-4 py-8 md:py-16">
 
             <!-- HERO SECTION -->
@@ -53,52 +75,81 @@
                 <h1 class="text-4xl md:text-7xl font-black uppercase tracking-wider gradient-text">
                     TÌM KIẾM KHÔNG GIAN SỐNG
                 </h1>
-                <p class="mt-4 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                    Nơi lý tưởng dành cho người trẻ năng động. Khám phá ngay căn phòng dành cho bạn với ưu đãi độc quyền!
+                <p class="mt-4 text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                    Nơi lý tưởng dành cho người trẻ năng động. Khám phá ngay căn phòng dành cho bạn với ưu đãi độc
+                    quyền!
                 </p>
             </header>
 
             <!-- COUNTDOWN TIMER SECTION -->
             <div id="countdown-section" class="mb-12 md:mb-20 hidden">
-                <h2 class="text-center text-2xl md:text-3xl font-bold text-white mb-6">
+                <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-6">
                     🔥 Ưu đãi giá sốc sẽ kết thúc sau... 🔥
                 </h2>
-                <div id="countdown-timer" class="flex justify-center items-center space-x-2 md:space-x-6 text-white"></div>
+                <div id="countdown-timer" class="flex justify-center items-center space-x-2 md:space-x-6 text-gray-800">
+                </div>
             </div>
 
             <!-- ROOMS LISTING SECTION -->
             <main>
                 <div id="loading-spinner" class="text-center">
-                    <svg class="animate-spin h-10 w-10 text-indigo-400 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg class="animate-spin h-10 w-10 text-indigo-600 mx-auto" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                        </circle>
+                        <path class="opacity-75" fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                        </path>
                     </svg>
-                    <p class="mt-2 text-lg">Đang tìm kiếm phòng tốt nhất cho bạn...</p>
+                    <p class="mt-2 text-lg text-gray-600">Đang tìm kiếm phòng tốt nhất cho bạn...</p>
                 </div>
-                
+
                 <div id="rooms-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Room cards will be inserted here by JavaScript -->
                 </div>
             </main>
 
             <!-- FOOTER -->
-            <footer class="text-center mt-16 md:mt-24 text-gray-400">
-                <p class="text-2xl font-bold">DreamStay</p>
-                <p>Liên hệ Zalo/SĐT: <a href="tel:0345470369" class="font-bold text-indigo-400 hover:text-indigo-300">0345.470.369</a> - <a href="tel:0389578939" class="font-bold text-indigo-400 hover:text-indigo-300">0389.578.939</a></p>
+            <footer class="text-center mt-16 md:mt-24 text-gray-500">
+                <p class="text-2xl font-bold text-gray-800">DreamStay</p>
+                <p>Liên hệ Zalo/SĐT: <a href="tel:0345470369"
+                        class="font-bold text-indigo-600 hover:text-indigo-500">0345.470.369</a> - <a
+                        href="tel:0389578939" class="font-bold text-indigo-600 hover:text-indigo-500">0389.578.939</a>
+                </p>
                 <p>Địa chỉ: Ngõ 123 Yên Xá, Tân Triều, Thanh Trì, Hà Nội</p>
                 <p class="mt-4 text-sm">&copy; 2025 DreamStay. All rights reserved.</p>
             </footer>
         </div>
     </div>
 
-    <script>
-        const GOOGLE_SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbz6fBtzhkfj_0RmRoI_8IJ509m53V-whCR7ud7FSnzeFPynMz6Y11bvkRLoNo94ntBTDQ/exec';
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
+        // --- CẤU HÌNH FIREBASE ---
+        // !!! QUAN TRỌNG: Dán đối tượng firebaseConfig của bạn đã sao chép ở Bước 1 vào đây
+        const firebaseConfig = {
+        apiKey: "AIzaSyB3Q8m01_64OLycqxEGAHFHvDmW00SZYeA",
+        authDomain: "quanlyphongtro-app.firebaseapp.com",
+        projectId: "quanlyphongtro-app",
+        storageBucket: "quanlyphongtro-app.firebasestorage.app",
+        messagingSenderId: "466847683817",
+        appId: "1:466847683817:web:69b8c774c20caa039a4c78",
+        measurementId: "G-1Z0N81908Y"
+        };
+
+        // Khởi tạo Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // --- DOM ELEMENTS ---
         const roomsGrid = document.getElementById('rooms-grid');
         const loadingSpinner = document.getElementById('loading-spinner');
         const countdownSection = document.getElementById('countdown-section');
         const countdownTimerEl = document.getElementById('countdown-timer');
 
+        // --- HELPER FUNCTIONS ---
         function formatCurrency(number) {
             if (isNaN(number) || number === null || number === '') return '';
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(number);
@@ -107,129 +158,74 @@
         function createRoomCard(room) {
             const isAvailable = room.TrangThai.toLowerCase() === 'trống';
             const hasPromo = room.GiaKhuyenMai && room.NgayHetHanKM;
-            const viewers = Math.floor(Math.random() * (15 - 5 + 1)) + 5; // Random viewers between 5 and 15
+            const viewers = Math.floor(Math.random() * (15 - 5 + 1)) + 5;
 
-            const amenities = room.TienNghiChinh ? room.TienNghiChinh.split(',').map(item => `<span class="bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">${item.trim()}</span>`).join('') : '';
+            const amenities = room.TienNghiChinh ? room.TienNghiChinh.split(',').map(item => `<span class="bg-gray-200 text-gray-700 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">${item.trim()}</span>`).join('') : '';
 
             return `
-                <div class="bg-gray-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col transition-all duration-300 card-hover-glow ${!isAvailable ? 'opacity-50 grayscale' : ''}">
-                    <!-- Image Section -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 card-hover-shadow ${!isAvailable ? 'opacity-60 grayscale' : ''}">
                     <div class="relative">
-                        <img src="${room.HinhAnh || 'https://placehold.co/600x400/1f2937/374151?text=DreamStay'}" alt="Ảnh phòng ${room.TenPhong}" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/1f2937/374151?text=Lỗi+Ảnh'">
+                        <img src="${room.HinhAnh || 'https://placehold.co/600x400/e2e8f0/475569?text=DreamStay'}" alt="Ảnh phòng ${room.TenPhong}" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Lỗi+Ảnh'">
                         <div class="absolute top-4 left-4 text-xs font-bold ${isAvailable ? 'bg-green-500' : 'bg-red-600'} text-white py-1 px-3 rounded-full shadow-lg">${room.TrangThai}</div>
-                        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-800 to-transparent"></div>
-                        <div class="absolute bottom-4 right-4 text-white text-sm font-bold flex items-center bg-black/50 px-2 py-1 rounded-md">
-                            <i class="fa-solid fa-eye mr-2 text-cyan-400"></i> ${viewers} người đang xem
+                        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+                        <div class="absolute bottom-4 right-4 text-gray-800 text-sm font-bold flex items-center bg-white/80 backdrop-blur-sm px-2 py-1 rounded-md shadow">
+                            <i class="fa-solid fa-eye mr-2 text-indigo-500"></i> ${viewers} người đang xem
                         </div>
                     </div>
-
-                    <!-- Content Section -->
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-white mb-2">${room.TenPhong}</h3>
-                        <p class="text-indigo-400 font-semibold text-sm mb-4"><i class="fa-solid fa-location-dot mr-2"></i>${room.MoTaNgan || 'Vị trí đắc địa'}</p>
-                        
-                        <!-- Specs -->
-                        <div class="flex justify-around text-center text-gray-300 my-2 border-y border-gray-700 py-3">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">${room.TenPhong}</h3>
+                        <p class="text-indigo-600 font-semibold text-sm mb-4"><i class="fa-solid fa-location-dot mr-2"></i>${room.MoTaNgan || 'Vị trí đắc địa'}</p>
+                        <div class="flex justify-around text-center text-gray-600 my-2 border-y border-gray-200 py-3">
                             <div>
-                                <i class="fa-solid fa-ruler-combined text-2xl text-purple-400"></i>
-                                <p class="font-bold mt-1">${room.DienTich || 'N/A'} m²</p>
+                                <i class="fa-solid fa-ruler-combined text-2xl text-purple-500"></i>
+                                <p class="font-bold mt-1 text-gray-800">${room.DienTich || 'N/A'} m²</p>
                                 <p class="text-xs">Diện tích</p>
                             </div>
                             <div>
-                                <i class="fa-solid fa-user-group text-2xl text-purple-400"></i>
-                                <p class="font-bold mt-1">${room.SoNguoiToiDa || 'N/A'}</p>
+                                <i class="fa-solid fa-user-group text-2xl text-purple-500"></i>
+                                <p class="font-bold mt-1 text-gray-800">${room.SoNguoiToiDa || 'N/A'}</p>
                                 <p class="text-xs">Số người tối đa</p>
                             </div>
                         </div>
-
-                        <!-- Amenities -->
                         <div class="my-4">
-                            <h4 class="font-bold text-white mb-2">Tiện nghi chính:</h4>
+                            <h4 class="font-bold text-gray-800 mb-2">Tiện nghi chính:</h4>
                             <div class="flex flex-wrap gap-2">${amenities || 'Đang cập nhật...'}</div>
                         </div>
-
-                        <!-- Price -->
                         <div class="mt-auto pt-4">
                             ${hasPromo ? `
-                                <p class="text-sm text-gray-400">Giá gốc: <span class="line-through">${formatCurrency(room.Gia)}</span></p>
-                                <p class="text-3xl font-extrabold gradient-text">${formatCurrency(room.GiaKhuyenMai)}<span class="text-lg text-gray-300">/tháng</span></p>
+                                <p class="text-sm text-gray-500">Giá gốc: <span class="line-through">${formatCurrency(room.Gia)}</span></p>
+                                <p class="text-3xl font-extrabold gradient-text">${formatCurrency(room.GiaKhuyenMai)}<span class="text-lg text-gray-700">/tháng</span></p>
                             ` : `
-                                <p class="text-3xl font-extrabold gradient-text">${formatCurrency(room.Gia)}<span class="text-lg text-gray-300">/tháng</span></p>
+                                <p class="text-3xl font-extrabold gradient-text">${formatCurrency(room.Gia)}<span class="text-lg text-gray-700">/tháng</span></p>
                             `}
                         </div>
-                        
-                        <!-- Action Button -->
-                        <a href="tel:0345470369" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-transform duration-300 hover:scale-105 mt-4 fomo-tag">
+                        <a href="tel:0345470369" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-transform duration-300 hover:scale-105 mt-4 fomo-tag shadow-lg shadow-indigo-500/50">
                             <i class="fa-solid fa-bolt mr-2"></i> GIỮ PHÒNG NGAY
                         </a>
                     </div>
                 </div>
             `;
         }
-
-        function updateCountdown(targetDateString) {
-            const targetDate = new Date(targetDateString).getTime();
-            const interval = setInterval(() => {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
-
-                if (distance < 0) {
-                    clearInterval(interval);
-                    countdownSection.innerHTML = '<h2 class="text-center text-2xl md:text-3xl font-bold text-red-500 mb-6">Rất tiếc, ưu đãi đã kết thúc!</h2>';
-                    return;
-                }
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                countdownTimerEl.innerHTML = `
-                    <div class="text-center p-2 md:p-4 bg-white/10 rounded-lg w-20 md:w-28"><div class="text-3xl md:text-5xl font-black">${String(days).padStart(2, '0')}</div><div class="text-xs md:text-sm uppercase">Ngày</div></div>
-                    <div class="text-center p-2 md:p-4 bg-white/10 rounded-lg w-20 md:w-28"><div class="text-3xl md:text-5xl font-black">${String(hours).padStart(2, '0')}</div><div class="text-xs md:text-sm uppercase">Giờ</div></div>
-                    <div class="text-center p-2 md:p-4 bg-white/10 rounded-lg w-20 md:w-28"><div class="text-3xl md:text-5xl font-black">${String(minutes).padStart(2, '0')}</div><div class="text-xs md:text-sm uppercase">Phút</div></div>
-                    <div class="text-center p-2 md:p-4 bg-white/10 rounded-lg w-20 md:w-28"><div class="text-3xl md:text-5xl font-black">${String(seconds).padStart(2, '0')}</div><div class="text-xs md:text-sm uppercase">Giây</div></div>
-                `;
-            }, 1000);
-        }
-
-        document.addEventListener('DOMContentLoaded', async () => {
-            if (GOOGLE_SHEET_API_URL === 'URL_CUA_BAN_O_DAY' || !GOOGLE_SHEET_API_URL) {
-                loadingSpinner.innerHTML = '<p class="text-red-500 text-xl font-bold">LỖI: Vui lòng cập nhật GOOGLE_SHEET_API_URL!</p>';
-                return;
-            }
-
-            try {
-                const response = await fetch(GOOGLE_SHEET_API_URL, { redirect: 'follow' });
-                if (!response.ok) throw new Error(`Lỗi HTTP! Trạng thái: ${response.status}`);
-                const rooms = await response.json();
-                
+        
+        // --- MAIN LOGIC ---
+        if (firebaseConfig.apiKey === "YOUR_API_KEY") {
+            loadingSpinner.innerHTML = '<p class="text-red-500 text-xl font-bold">LỖI: Vui lòng cập nhật firebaseConfig trong mã nguồn!</p>';
+        } else {
+            onSnapshot(collection(db, "phong"), (snapshot) => {
                 loadingSpinner.style.display = 'none';
+                roomsGrid.innerHTML = ''; // Xóa danh sách cũ trước khi cập nhật
+                const rooms = snapshot.docs.map(doc => doc.data());
                 
                 if (rooms && rooms.length > 0) {
                     rooms.forEach(room => {
                         roomsGrid.innerHTML += createRoomCard(room);
                     });
-                    
-                    const promoRoom = rooms.find(r => r.NgayHetHanKM);
-                    if (promoRoom) {
-                        countdownSection.classList.remove('hidden');
-                        updateCountdown(promoRoom.NgayHetHanKM);
-                    }
                 } else {
-                     roomsGrid.innerHTML = '<p class="text-center text-xl col-span-full">Hiện tại đã hết phòng. Vui lòng quay lại sau!</p>';
+                    roomsGrid.innerHTML = '<p class="text-center text-xl col-span-full">Hiện tại đã hết phòng. Vui lòng quay lại sau!</p>';
                 }
-            } catch (error) {
-                console.error('Chi tiết lỗi:', error);
-                let errorMessage = 'Đã xảy ra lỗi khi tải dữ liệu. Vui lòng kiểm tra lại URL API và đảm bảo Google Sheet đã được chia sẻ công khai.';
-                if (error instanceof TypeError) {
-                    errorMessage = 'Lỗi mạng hoặc CORS. Hãy chắc chắn rằng bạn đã triển khai Apps Script với quyền truy cập "Bất kỳ ai".';
-                } else if (error instanceof SyntaxError) {
-                    errorMessage = 'Lỗi phân tích dữ liệu. API không trả về định dạng JSON hợp lệ. Hãy kiểm tra lại code trong Apps Script.';
-                }
-                loadingSpinner.innerHTML = `<p class="text-red-500 text-xl font-bold text-center">${errorMessage}</p>`;
-            }
-        });
+            });
+        }
     </script>
 </body>
+
 </html>
